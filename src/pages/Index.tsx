@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import ConfianceSection from '@/components/ConfianceSection';
 import Servicesection from '@/components/Servicesection';
 import Projetsection from '@/components/Projetsection';
+import Staticsection from '@/components/staticsection';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <Staticsection/>
       <Servicesection/>
       <ConfianceSection />
       <Projetsection />

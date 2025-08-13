@@ -14,7 +14,9 @@ const iconMap = {
 const ConfianceSection = () => {
   return (
     <section className="bg-[#FFF8F0] py-12 px-5 text-center font-sans text-[#6C2E0A]">
-      <h2 className="text-3xl font-bold mb-10">Pourquoi nous choisir ?</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#6C2E0A" }}>
+        Pourquoi nous choisir ?
+      </h2>
       <p className="max-w-xl mx-auto mb-12 text-lg text-gray-700">
         Nous offrons des services de haute qualité, toujours à vos côtés à chaque étape.
       </p>
@@ -30,7 +32,7 @@ const ConfianceSection = () => {
             >
               {IconComponent && <IconComponent size={50} className="mb-4" color={color} />}
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p>{description}</p>
+              <p className='text-black'>{description}</p>
             </div>
           );
         })}

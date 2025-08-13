@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Cardprojet = ({ title, description, imageUrl, link }) => {
+const Cardprojet = ({ objet, maitredouvrage, imageUrl, link }) => {
   const navigate = useNavigate();
 
   return (
@@ -10,12 +10,12 @@ const Cardprojet = ({ title, description, imageUrl, link }) => {
     >
       <img
         src={imageUrl}
-        alt={title}
+        alt={objet}
         className="w-full h-[200px] object-cover"
       />
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-[1.5rem] font-bold mb-4 text-gray-900 font-sans">{title}</h3>
-        <p className="text-gray-600 flex-grow leading-6">{description}</p>
+        <h3 className="text-[1.5rem] font-bold mb-4 text-gray-900 font-sans">{objet}</h3>
+        <p className="text-gray-600 flex-grow leading-6">{maitredouvrage}</p>
         <button
           onClick={(e) => {
             e.stopPropagation();

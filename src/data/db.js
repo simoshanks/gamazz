@@ -1,4 +1,9 @@
 
+
+import projet1 from "../assets/projet1.jpg";
+import projet2 from "../assets/projet2.jpg";
+import projet3 from "../assets/projet3.jpg";
+
 export const services = [{
     id: 1,
     icon: "FaWater",
@@ -23,7 +28,7 @@ export const domains = [
     icon: "FaCheckCircle",
     title: "Qualité supérieure",
     description: "Nous soignons chaque détail pour vous garantir le meilleur résultat.",
-    color: "#6C2E0A",      // اللون الرئيسي ممكن تستعمله لتلوين الأيقونة أو النص
+    color: "#E5702A",      // اللون الرئيسي ممكن تستعمله لتلوين الأيقونة أو النص
     bgColor: "#fff"        // لون الخلفية ديال الكارت
   },
   {
@@ -32,38 +37,37 @@ export const domains = [
     title: "Disponibilité 24/7",
     description: "Notre équipe est toujours là pour vous soutenir, à tout moment.",
     color: "#fff",
-    bgColor: "#6C2E0A"
+    bgColor: "#E5702A"
   },
   {
     id: 3,
     icon: "FaHandshake",
     title: "Partenaire de confiance",
     description: "Nos clients comptent sur nous grâce à notre honnêteté et engagement.",
-    color: "#6C2E0A",
+    color: "#E5702A",
     bgColor: "#fff"
   }
 ];
 export const projects = [
   {
     id: 1,
-    title: "Titre 1",
-    description: "Description détaillée du projet 1.",
-    imageUrl: "/images/projet1.jpg",
+    objet: "Dar Talib à la C.T. Tabant",
+    maitredouvrage: "Province D'azilal (INDH)",
+    imageUrl: projet1,
     link: "/projets/1"
   },
   {
     id: 2,
-    title: "Titre du projet 2",
-    description: "Description détaillée du projet 2.",
-    imageUrl: "/images/projet2.jpg",
+    objet: "Dar Talib à la C.T. Tabant",
+    maitredouvrage: "Province D'azilal (INDH)",
+    imageUrl: projet2,
     link: "/projets/2"
   },
   {
     id: 3,
-    title: "Titre du projet 3",
-    description: "Description détaillée du projet 3.",
-    imageUrl: "/images/projet3.jpg",
+    objet: "Dar Talib à la C.T. Tabant",
+    maitredouvrage: "Province D'azilal (INDH)",
+    imageUrl: projet3,
     link: "/projets/3"
   },
-  
 ];

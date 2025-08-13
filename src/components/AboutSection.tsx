@@ -1,30 +1,28 @@
 import aboutImg from "../assets/about img.jpg";
 
 const AboutSection = () => {
-
-
   return (
-    <section className="bg-[#f8f8f8] py-16 px-5">
+    <section className="bg-[#FFF8F0] py-16 px-5">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        
+
         {/* Image */}
-        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0 overflow-hidden rounded-lg">
           <img
             src={aboutImg}
             alt="Notre entreprise"
-            className="w-full rounded-lg"
+           className="w-full rounded-[40px] transform transition-transform duration-500 hover:scale-105"
           />
-
         </div>
 
         {/* Text */}
         <div className="w-full md:w-1/2 md:pl-10">
-          <h2 className="text-3xl font-bold mb-4" style={{color: "#6C2E0A"}}>Qui sommes-nous ?</h2>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Nous sommes une entreprise spécialisée dans la construction et la distribution d'eau potable, 
-            avec plus de 20 ans d'expérience dans le domaine.
-            Notre mission est de fournir des infrastructures durables et de qualité, 
-            tout en respectant les normes environnementales.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: "#6C2E0A"}}>
+            Qui sommes-nous ?
+          </h2>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Nous sommes une entreprise spécialisée dans la construction et la distribution d'eau potable,
+            avec plus de 20 ans d'expérience dans le domaine. Notre mission est de fournir des infrastructures
+            durables et de qualité, tout en respectant les normes environnementales.
           </p>
           <button
             onClick={() => window.location.href = "/about"}

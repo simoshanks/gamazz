@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import herovideo from '@/assets/TRAVAUX.mp4';
+import herovideo from '@/assets/T1.mp4';
 
-const mainColor = "#6C2E0A";
+const mainColor = "#E5702A";
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const link = "/projets"; // غير الرابط اللي بغيت توجه ليه من بعد الضغط على الزرار
+  const link = "/projets";
 
   const fullText = "Construire l'avenir__ ";
   const coloredText = "Eau potable & Bâtiment";
 
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
+  const [showSubtitle, setShowSubtitle] = useState(false); // لإظهار السطر الثاني تدريجيًا
 
   useEffect(() => {
     if (index < fullText.length) {
@@ -21,40 +22,43 @@ const HeroSection = () => {
         setIndex(index + 1);
       }, 100);
       return () => clearTimeout(timeout);
+    } else {
+      // بعد ما تكمل الكتابة نعرض السطر الثاني تدريجيًا
+      const subtitleTimeout = setTimeout(() => setShowSubtitle(true), 300);
+      return () => clearTimeout(subtitleTimeout);
     }
   }, [index]);
 
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden h-[80vh] p-0 m-0"
-    >
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
+    <section id="home" className="relative overflow-hidden h-[80vh] p-0 m-0">
+      <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover">
         <source src={herovideo} type="video/mp4" />
       </video>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-20">
-        <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
+        <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-4">
           {displayedText}
           {index === fullText.length && (
             <span style={{ color: mainColor }}>{coloredText}</span>
           )}
           {index < fullText.length && <span className="blinking-cursor">|</span>}
         </h1>
+
+        {showSubtitle && (
+          <h2 className="text-white text-lg md:text-2xl mb-6 opacity-0 animate-fadeIn">
+            Votre sécurité Est Notre Priorité
+          </h2>
+        )}
+
         <button
           onClick={() => navigate(link)}
-          className="mt-5 px-8 py-3 border-2 border-[#cc5d21] text-[#cc5d21] rounded-[10px] font-semibold hover:bg-[#cc5d21] hover:text-white transition-colors duration-300"
+          className="mt-5 px-20 py-3 bg-[#E5702A] text-white rounded-[40px] font-semibold hover:bg-[#cc5d21] transition-colors duration-300"
         >
           Voir le projet
         </button>
       </div>
 
-      <style >{`
+      <style>{`
         .blinking-cursor {
           font-weight: 100;
           font-size: 2rem;
@@ -64,6 +68,13 @@ const HeroSection = () => {
         @keyframes blink {
           0%, 100% { opacity: 0; }
           50% { opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.8s forwards;
         }
       `}</style>
     </section>
