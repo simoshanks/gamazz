@@ -6,7 +6,7 @@ const mainColor = "#E5702A";
 
 const HeroAbout = () => {
     const navigate = useNavigate();
-    const link = "/projets"; // غير الرابط اللي بغيت توجه ليه من بعد الضغط على الزرار
+    const link = "/projets"; 
 
     const fullText = " Depuis 2003, construisons ensemble un avenir solide et durable.";
 

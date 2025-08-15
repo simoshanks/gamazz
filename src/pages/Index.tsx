@@ -6,6 +6,7 @@ import ConfianceSection from '@/components/ConfianceSection';
 import Servicesection from '@/components/Servicesection';
 import Projetsection from '@/components/Projetsection';
 import Staticsection from '@/data/Staticsection';
+import FooterTop from '@/components/FooterTop';
 
 const Index = () => {
   return (
@@ -18,7 +19,7 @@ const Index = () => {
       <ConfianceSection />
       <Projetsection />
       
-      
+      <FooterTop/>
       <Footer />
     </div>
   );

@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Moyens from "./pages/Moyens";
 import MoyenHumain from "./pages/MoyenHumain";       // <== هنا صححت المسار
 import MoyenMatiriel from "./pages/MoyenMatiriel";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/moyens" element={<Moyens />} />
           <Route path="/moyen-humain" element={<MoyenHumain />} />
           <Route path="/moyen-materiel" element={<MoyenMatiriel />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

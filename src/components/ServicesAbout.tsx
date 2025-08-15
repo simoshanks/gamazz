@@ -1,5 +1,5 @@
 import { FaTools } from "react-icons/fa";
-import constructionImg from "@/assets/const.jpg";
+import constructionImg from "@/assets/heroAbout.png";
 import eauImg from "@/assets/eau-service.png";
 import venteBg from "@/assets/vente.png";
 
