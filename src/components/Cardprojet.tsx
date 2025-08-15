@@ -13,18 +13,36 @@ const Cardprojet = ({ objet, maitredouvrage, imageUrl, link }) => {
         alt={objet}
         className="w-full h-[200px] object-cover"
       />
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-[1.5rem] font-bold mb-4 text-gray-900 font-sans">{objet}</h3>
-        <p className="text-gray-600 flex-grow leading-6">{maitredouvrage}</p>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(link);
-          }}
-          className="mt-5 self-start px-6 py-3 border-2 border-[#cc5d21] text-[#cc5d21] rounded-[10px] font-semibold hover:bg-[#cc5d21] hover:text-white transition-colors duration-300"
-        >
-          Voir le projet
-        </button>
+      <div className="p-6 flex flex-col flex-grow items-center text-center">
+        <h3 className="text-[1.5rem] font-bold mb-4 text-gray-900 font-sans">
+          {objet}
+        </h3>
+        <p className="text-gray-600 flex-grow leading-6">
+          {maitredouvrage}
+        </p>
+        
+        {/* أزرار في نفس السطر */}
+        <div className="mt-5 flex gap-3">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(link);
+            }}
+            className="px-5 py-3 border-2 border-[#cc5d21] text-[#cc5d21] rounded-[40px] font-semibold hover:bg-[#cc5d21] hover:text-white transition-colors duration-300"
+          >
+            Voir le projet
+          </button>
+          
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(link);
+            }}
+            className="px-5 py-3 border-2 border-[#cc5d21] text-[#cc5d21] rounded-[40px] font-semibold hover:bg-[#cc5d21] hover:text-white transition-colors duration-300"
+          >
+            Voir détail
+          </button>
+        </div>
       </div>
     </div>
   );

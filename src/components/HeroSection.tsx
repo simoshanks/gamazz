@@ -12,9 +12,12 @@ const HeroSection = () => {
   const coloredText = "Eau potable & Bâtiment";
 
   const [displayedText, setDisplayedText] = useState("");
+  const [displayedColoredText, setDisplayedColoredText] = useState("");
   const [index, setIndex] = useState(0);
-  const [showSubtitle, setShowSubtitle] = useState(false); // لإظهار السطر الثاني تدريجيًا
+  const [coloredIndex, setColoredIndex] = useState(0);
+  const [showSubtitle, setShowSubtitle] = useState(false);
 
+  // كتابة السطر الأول
   useEffect(() => {
     if (index < fullText.length) {
       const timeout = setTimeout(() => {
@@ -22,12 +25,22 @@ const HeroSection = () => {
         setIndex(index + 1);
       }, 100);
       return () => clearTimeout(timeout);
-    } else {
-      // بعد ما تكمل الكتابة نعرض السطر الثاني تدريجيًا
+    }
+  }, [index]);
+
+  // كتابة السطر الثاني الملون بعد اكتمال الأول
+  useEffect(() => {
+    if (index === fullText.length && coloredIndex < coloredText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedColoredText((prev) => prev + coloredText.charAt(coloredIndex));
+        setColoredIndex(coloredIndex + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else if (coloredIndex === coloredText.length) {
       const subtitleTimeout = setTimeout(() => setShowSubtitle(true), 300);
       return () => clearTimeout(subtitleTimeout);
     }
-  }, [index]);
+  }, [index, coloredIndex]);
 
   return (
     <section id="home" className="relative overflow-hidden h-[80vh] p-0 m-0">
@@ -38,10 +51,10 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-20">
         <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-4">
           {displayedText}
-          {index === fullText.length && (
-            <span style={{ color: mainColor }}>{coloredText}</span>
+          <span style={{ color: mainColor }}>{displayedColoredText}</span>
+          {(index < fullText.length || coloredIndex < coloredText.length) && (
+            <span className="blinking-cursor">|</span>
           )}
-          {index < fullText.length && <span className="blinking-cursor">|</span>}
         </h1>
 
         {showSubtitle && (

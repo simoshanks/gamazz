@@ -10,7 +10,7 @@ const Navigation = () => {
     { name: 'Accueil', href: '/' },
     { name: 'Services', href: '/Services', hasDropdown: true, dropdownKey: 'services' },
     { name: 'Projets', href: '/Projets' },
-    { name: 'Moyens', href: '/Moyens', hasDropdown: true, dropdownKey: 'moyens' },
+    { name: 'Moyens', href: '/moyens', hasDropdown: true, dropdownKey: 'moyens' },
     { name: 'À propos', href: '/about' },
     { name: 'Contact', href: '/Contact' },
   ];
@@ -22,8 +22,8 @@ const Navigation = () => {
   ];
 
   const moyensDropdown = [
-    { name: 'Moyen humain', href: '#moyen-humain' },
-    { name: 'Moyen matériel', href: '#moyen-materiel' },
+    { name: 'Moyen humain', href: '/moyen-humain' },
+    { name: 'Moyen matériel', href: '/moyen-materiel' },
   ];
 
   const highlightColor = "#E5702A"; // اللون الجديد

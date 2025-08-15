@@ -9,7 +9,7 @@ const MessionVesion = () => {
     return (
         <>
             {/* Mission & Vision Row */}
-            <div className="bg-[#FFF8F0]">
+            <div className="bg-[#FFF8F0] py-10">
                 <main className="container mx-auto my-12 px-4">
                 <div className="grid md:grid-cols-2 gap-8">
 

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import ConfianceSection from '@/components/ConfianceSection';
 import Servicesection from '@/components/Servicesection';
 import Projetsection from '@/components/Projetsection';
-import Staticsection from '@/components/staticsection';
+import Staticsection from '@/data/Staticsection';
 
 const Index = () => {
   return (
