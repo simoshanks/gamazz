@@ -1,7 +1,7 @@
 import { FaTools } from "react-icons/fa";
-import constructionImg from "@/assets/construction-service.webp";
+import constructionImg from "@/assets/const.jpg";
 import eauImg from "@/assets/eau-service.png";
-import venteBg from "@/assets/construction-service.webp";
+import venteBg from "@/assets/vente.png";
 
 const ServicesAbout = () => {
     return (

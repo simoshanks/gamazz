@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
-import HeroMoyen from "@/components/HeroMoyen";
+import Heromatireil from "@/components/Heromatireil";
+
 import MaterielSection from "@/components/MaterielSection";
 import Navigation from "@/components/Navigation";
 
@@ -7,7 +8,7 @@ const MoyenMatiriel = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <HeroMoyen />
+      <Heromatireil/>
       <MaterielSection />
       <Footer />
     </div>

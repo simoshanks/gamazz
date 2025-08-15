@@ -1,6 +1,6 @@
-import aboutImg from '@/assets/img human.jpg';
+import aboutImg from '@/assets/materiel.jpg';
 
-const HeroMoyen = () => {
+const Heromatireil = () => {
   return (
     <section
       id="home"
@@ -19,4 +19,4 @@ const HeroMoyen = () => {
   );
 };
 
-export default HeroMoyen;
+export default Heromatireil;

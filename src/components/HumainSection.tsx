@@ -46,11 +46,11 @@ const HumainSection = () => {
 
   return (
     <div className="bg-[#FFF8F0] py-10 px-4">
-      <h1 className="text-3xl font-bold text-[#E5702A] text-center mb-10">
-        MOYENS HUMAINS
+      <h1 className="text-5xl font-extrabold text-[#6C2E0A] text-center mb-12 mt-20 tracking-wide drop-shadow-lg">
+        MOYENS <span className="text-[#D97706]">HUMAINS</span>
       </h1>
 
-      <h2 className="text-xl font-semibold text-[#E5702A] mb-4 text-center">
+      <h2 className="text-xl font-semibold text-[#6C2E0A] mb-4 text-center">
         Agents Permanents
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-6xl mx-auto mb-10">
@@ -59,7 +59,7 @@ const HumainSection = () => {
         ))}
       </div>
 
-      <h2 className="text-xl font-semibold text-[#E5702A] mb-4 text-center">
+      <h2 className="text-xl font-semibold text-[#6C2E0A] mb-4 text-center">
         Agents Non Permanents
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-6xl mx-auto">

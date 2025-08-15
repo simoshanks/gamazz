@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import aboutImg from '@/assets/about-img.png';
+import aboutImg from '@/assets/hero-about.png';
 
 const mainColor = "#E5702A";
 
@@ -26,7 +26,7 @@ const HeroAbout = () => {
     return (
         <section
             id="home"
-            className="relative overflow-hidden h-[80vh] p-0 m-0"
+            className="relative overflow-hidden h-[50vh] p-0 m-0"
         >
             <img src={aboutImg}
 

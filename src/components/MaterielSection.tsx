@@ -43,8 +43,8 @@ const MaterielSection = () => {
 
   return (
     <div className="bg-[#FFF8F0] py-10 px-4">
-      <h1 className="text-3xl font-bold text-[#E5702A] text-center mb-10 mt-20">
-        MOYENS MATERIELS
+      <h1 className="text-5xl font-extrabold text-[#6C2E0A] text-center mb-12 mt-20 tracking-wide drop-shadow-lg">
+        MOYENS <span className="text-[#D97706]">MATERIELS</span>
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
