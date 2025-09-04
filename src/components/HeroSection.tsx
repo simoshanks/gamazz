@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import herovideo from '@/assets/T1.mp4';
 
 const mainColor = "#E5702A";
@@ -17,7 +17,7 @@ const HeroSection = () => {
   const [coloredIndex, setColoredIndex] = useState(0);
   const [showSubtitle, setShowSubtitle] = useState(false);
 
-  // كتابة السطر الأول
+  
   useEffect(() => {
     if (index < fullText.length) {
       const timeout = setTimeout(() => {
@@ -28,7 +28,7 @@ const HeroSection = () => {
     }
   }, [index]);
 
-  // كتابة السطر الثاني الملون بعد اكتمال الأول
+  
   useEffect(() => {
     if (index === fullText.length && coloredIndex < coloredText.length) {
       const timeout = setTimeout(() => {
@@ -63,12 +63,12 @@ const HeroSection = () => {
           </h2>
         )}
 
-        <button
+        <NavLink to={'/projet'}
           onClick={() => navigate(link)}
           className="mt-5 px-20 py-3 bg-[#E5702A] text-white rounded-[40px] font-semibold hover:bg-[#cc5d21] transition-colors duration-300"
         >
           Voir le projet
-        </button>
+        </NavLink>
       </div>
 
       <style>{`

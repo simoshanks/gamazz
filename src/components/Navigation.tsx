@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logomobil.png';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,8 +9,8 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/Services', hasDropdown: true, dropdownKey: 'services' },
-    { name: 'Projets', href: '/Projets' },
+    { name: 'Services', href: '/Services' },
+    { name: 'Projet', href: '/Projet' },
     { name: 'Moyens', href: '/moyens', hasDropdown: true, dropdownKey: 'moyens' },
     { name: 'À propos', href: '/about' },
     { name: 'Contact', href: '/Contact' },
@@ -26,13 +27,21 @@ const Navigation = () => {
     { name: 'Moyen matériel', href: '/moyen-materiel' },
   ];
 
-  const highlightColor = "#E5702A"; // اللون الجديد
+  const highlightColor = "#E5702A";
 
   return (
-    <nav className="fixed top-8 left-0 right-0 z-50 mx-auto max-w-[1100px] rounded-full bg-white/90 backdrop-blur-md shadow-lg border border-gray-200">
+    <nav
+      className={`
+        fixed top-8 left-0 right-0 z-50 mx-auto max-w-[1100px] rounded-full
+        md:bg-white/90 md:backdrop-blur-md md:shadow-lg md:border md:border-gray-200
+        bg-transparent shadow-none border-0
+      `}
+    >
       <div className="flex justify-between items-center h-16 px-6">
         {/* Logo */}
-        <img src={logo} alt="logo" className="h-14 w-auto" />
+        <NavLink to="/">
+          <img src={logo} alt="logo" className="h-14 w-auto cursor-pointer" />
+        </NavLink>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex justify-center items-center space-x-6 flex-1 relative">
@@ -43,8 +52,7 @@ const Navigation = () => {
                   onClick={() =>
                     setOpenDropdown(openDropdown === item.dropdownKey ? null : item.dropdownKey)
                   }
-                  className={`text-black font-medium hover:text-[${highlightColor}] transition-colors duration-200`}
-                  style={{ color: 'black' }}
+                  className={`text-black font-medium transition-colors duration-200`}
                   onMouseEnter={e => e.currentTarget.style.color = highlightColor}
                   onMouseLeave={e => e.currentTarget.style.color = 'black'}
                 >
@@ -61,7 +69,6 @@ const Navigation = () => {
                             <a
                               href={option.href}
                               className="block px-4 py-2 text-black transition-colors duration-200"
-                              style={{ color: 'black' }}
                               onMouseEnter={e => e.currentTarget.style.color = highlightColor}
                               onMouseLeave={e => e.currentTarget.style.color = 'black'}
                             >
@@ -79,7 +86,6 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 className="text-black font-medium transition-colors duration-200"
-                style={{ color: 'black' }}
                 onMouseEnter={e => e.currentTarget.style.color = highlightColor}
                 onMouseLeave={e => e.currentTarget.style.color = 'black'}
               >
@@ -90,15 +96,22 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center z-50">
           <button
             onClick={() => {
               setIsOpen(!isOpen);
               setOpenDropdown(null);
             }}
-            className="p-2 rounded-md text-gray-700 hover:text-[E5702A] hover:bg-gray-100 focus:outline-none"
+            className="
+      p-2.5 rounded-full bg-[#6C2E0A]  // لون بني ثابت
+      focus:outline-none
+    "
           >
-            {isOpen ? <X className="h-6 w-6 transition-transform duration-200" /> : <Menu className="h-6 w-6 transition-transform duration-200" />}
+            {isOpen ? (
+              <X className="h-8 w-8 text-white" />
+            ) : (
+              <Menu className="h-8 w-8 text-white" />
+            )}
           </button>
         </div>
       </div>

@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 
 const MoyenMatiriel = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFF8F0]">
       <Navigation />
       <Heromatireil/>
       <MaterielSection />

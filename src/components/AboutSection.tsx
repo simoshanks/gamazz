@@ -1,4 +1,4 @@
-import aboutImg from "../assets/about img.jpg";
+import aboutImg from "../assets/aboutsection.jpg";
 
 const AboutSection = () => {
   return (
@@ -10,13 +10,13 @@ const AboutSection = () => {
           <img
             src={aboutImg}
             alt="Notre entreprise"
-           className="w-full rounded-[40px] transform transition-transform duration-500 hover:scale-105"
+            className="w-full rounded-[40px] transform transition-transform duration-500 hover:scale-105"
           />
         </div>
 
         {/* Text */}
         <div className="w-full md:w-1/2 md:pl-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: "#6C2E0A"}}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#6C2E0A" }}>
             Qui sommes-nous ?
           </h2>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
@@ -26,7 +26,7 @@ const AboutSection = () => {
           </p>
           <button
             onClick={() => window.location.href = "/about"}
-            className="mt-6 bg-white text-[#cc5d21] border-2 border-[#cc5d21] px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-[#cc5d21] hover:text-white"
+            className="mt-5 px-6 py-3 bg-[#E5702A] text-white rounded-[40px] font-semibold hover:bg-[#cc5d21] transition-colors duration-300"
           >
             En savoir plus
           </button>

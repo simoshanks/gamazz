@@ -11,6 +11,9 @@ import Moyens from "./pages/Moyens";
 import MoyenHumain from "./pages/MoyenHumain";       // <== هنا صححت المسار
 import MoyenMatiriel from "./pages/MoyenMatiriel";
 import Contact from "./pages/Contact";
+import Projet from "./pages/Projet";
+import ProjetDetails from "./pages/ProjetDetails";
+import Services from "./pages/Services";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/moyen-humain" element={<MoyenHumain />} />
           <Route path="/moyen-materiel" element={<MoyenMatiriel />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/projet" element={<Projet />} />
+           <Route path="/services" element={<Services />} />
+           <Route path="/projet-details/:id" element={<ProjetDetails/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

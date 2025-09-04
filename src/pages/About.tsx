@@ -4,7 +4,7 @@ import HeroAbout from '@/components/HeroAbout';
 import MessionVesion from '@/components/MessionVesion';
 import OurHistory from '@/components/OurHistory';
 import ValuesSection from '@/components/ValuesSection';
-import Staticsection from '@/data/Staticsection';
+import Staticsection from '@/components/Staticsection';
 import CompanyCard from '@/components/CompanyCard';
 import ServicesAbout from '@/components/ServicesAbout';
 
@@ -12,7 +12,7 @@ import ServicesAbout from '@/components/ServicesAbout';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFF8F0]">
       <Navigation />
       <HeroAbout />
       <CompanyCard />
@@ -21,6 +21,7 @@ const About = () => {
       <OurHistory />
       <Staticsection />
       <ValuesSection />
+      
       
       
       <Footer />

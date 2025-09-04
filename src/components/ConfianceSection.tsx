@@ -1,10 +1,10 @@
 import React from 'react';
 import { domains } from '../data/db';
 
-// استيراد الأيقونات من react-icons/fa
+
 import { FaCheckCircle, FaClock, FaHandshake } from 'react-icons/fa';
 
-// خريطة اسم الأيقونة => مكون React
+
 const iconMap = {
   FaCheckCircle: FaCheckCircle,
   FaClock: FaClock,
