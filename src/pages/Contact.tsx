@@ -42,7 +42,7 @@ const Contact = () => {
               )}&body=${body}`;
               window.open(mailtoLink, "_blank");
 
-              alert("l'email est en cours d'ouverture pour envoyer le message ...");
+              
             }}
             className="w-full bg-white p-8 rounded-2xl shadow-2xl space-y-4"
           >
