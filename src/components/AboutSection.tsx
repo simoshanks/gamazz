@@ -11,6 +11,7 @@ const AboutSection = () => {
             src={aboutImg}
             alt="Notre entreprise"
             className="w-full rounded-[40px] transform transition-transform duration-500 hover:scale-105"
+            loading="lazy" 
           />
         </div>
 

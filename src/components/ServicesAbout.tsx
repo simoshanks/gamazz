@@ -57,6 +57,7 @@ const ServicesAbout = () => {
                             src={constructionImg}
                             alt="Construction"
                             className="w-full h-full object-cover"
+                            loading="lazy" 
                         />
                     </div>
 
@@ -66,6 +67,7 @@ const ServicesAbout = () => {
                             src={eauImg}
                             alt="Eau Potable"
                             className="w-full h-full object-cover"
+                            loading="lazy" 
                         />
                     </div>
 

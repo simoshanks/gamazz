@@ -151,6 +151,7 @@ const ProjetDetails = () => {
                     src={step.image}
                     alt={`Étape ${index + 1}`}
                     className="w-full h-20 object-cover"
+                    loading="lazy"
                   />
                   <p className="text-xs font-medium text-[#6C2E0A] py-1 text-center">
                     Étape {index + 1}

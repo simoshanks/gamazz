@@ -23,6 +23,7 @@ const EauService = () => {
             src={eauImg}
             alt="Distribution d'Eau"
              className="w-full max-h-80 rounded-2xl shadow-xl object-cover"
+             loading="lazy" 
           />
         </div>
 

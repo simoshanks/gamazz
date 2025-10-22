@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
+import Navigation from "@/components/Navigation";
 import projet1 from "@/assets/construction.jpg";
 import projet2 from "@/assets/eau-service.png";
 import projet3 from "@/assets/vente.png";
-import Navigation from "@/components/Navigation";
 
 const services = [
   { id: 1, title: "Construction", image: projet1 },
@@ -11,31 +11,24 @@ const services = [
 ];
 
 const Sliderimg = () => {
-  const [rotation, setRotation] = useState(0);
-  const requestRef = useRef<number>();
-  const step = 0.25;
-
-  const animate = () => {
-    setRotation(prev => (prev - step) % 360); 
-    requestRef.current = requestAnimationFrame(animate);
-  };
-
   useEffect(() => {
-    requestRef.current = requestAnimationFrame(animate);
-    return () => requestRef.current && cancelAnimationFrame(requestRef.current);
+    // ممكن مستقبلاً نزيد تحكم فالسرعة أو الاتجاه
   }, []);
 
   return (
     <div>
-      
+      {/* Navigation */}
       <div className="bg-white shadow-md z-20 relative">
         <Navigation />
       </div>
 
-      
-      <section className="relative h-[80vh] bg-gradient-to-b from-[#6C2E0A] via-[#8B4513]/80 to-[#FFF8F0] overflow-hidden flex flex-col justify-center items-center">
-        
-        <div className="relative z-10 text-center mb-10 animate-fadeIn" style={{ marginTop: "6rem" }}>
+      {/* Section principale */}
+      <section className="relative h-[90vh] bg-gradient-to-b from-[#6C2E0A] via-[#8B4513]/80 to-[#FFF8F0] flex flex-col justify-center items-center overflow-hidden">
+        {/* Titre */}
+        <div
+          className="relative z-10 text-center mb-10 animate-fadeIn"
+          style={{ marginTop: "6rem" }}
+        >
           <h2 className="text-5xl font-extrabold text-[#E6702A] drop-shadow-lg">
             Nos Services
           </h2>
@@ -44,57 +37,51 @@ const Sliderimg = () => {
           </p>
         </div>
 
-        
-        <div className="relative w-[500px] h-[380px] mx-auto perspective-[1400px]">
+        {/* Cercle 3D tournant */}
+        <div className="relative w-[500px] h-[400px] perspective-[1200px]">
           <div
-            className="absolute w-full h-full transition-transform duration-1000 ease-out"
+            className="absolute w-full h-full"
             style={{
               transformStyle: "preserve-3d",
-              transform: `rotateY(${rotation}deg)`,
+              animation: "spin 25s linear infinite",
             }}
           >
             {services.map((service, i) => {
               const angle = (i * 360) / services.length;
-              const rotationMod = ((rotation + angle) % 360 + 360) % 360;
-              const isFront = rotationMod < 90 || rotationMod > 270;
-
               return (
                 <div
                   key={service.id}
-                  className="absolute w-[480px] h-[340px] left-[10px] top-[10px] rounded-2xl shadow-2xl overflow-hidden cursor-pointer transform-gpu transition-transform duration-700 hover:scale-110 animate-zoomIn"
-                  style={{ transform: `rotateY(${angle}deg) translateZ(520px)` }}
+                  className="absolute w-[480px] h-[340px] left-[10px] top-[10px] rounded-2xl shadow-2xl overflow-hidden transform-gpu transition-transform duration-700 hover:scale-110"
+                  style={{
+                    transform: `rotateY(${angle}deg) translateZ(520px)`,
+                  }}
                 >
-                  
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-all duration-500"
-                    style={{
-                      opacity: isFront ? 1 : 0.5,
-                      backgroundColor: isFront ? "transparent" : "rgba(230, 112, 42, 0.3)",
-                      transition: "opacity 0.3s ease, background-color 0.3s ease",
-                      backdropFilter: isFront ? "none" : "blur(4px)",
-                      borderRadius: "12px"
-                    }}
+                    className="w-full h-full object-cover"
+                    loading="lazy" 
                   />
-
-                  
-                  <div
-                    className={`absolute bottom-0 left-0 w-full z-20 transition-opacity duration-500 ${
-                      isFront ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <div className="bg-[#6C2E0A]/70 w-full text-center py-3">
-                      <span className="text-white text-xl font-semibold tracking-wide drop-shadow-md">
-                        {service.title}
-                      </span>
-                    </div>
+                  <div className="absolute bottom-0 left-0 w-full bg-[#6C2E0A]/70 text-center py-3">
+                    <span className="text-white text-xl font-semibold tracking-wide drop-shadow-md">
+                      {service.title}
+                    </span>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
+
+        {/* Animation CSS */}
+        <style>
+          {`
+            @keyframes spin {
+              0% { transform: rotateY(0deg); }
+              100% { transform: rotateY(-360deg); }
+            }
+          `}
+        </style>
       </section>
     </div>
   );

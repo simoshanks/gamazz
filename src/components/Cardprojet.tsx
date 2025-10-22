@@ -13,6 +13,7 @@ const Cardprojet = ({ objet, maitreOuvrage, imageUrl, id }) => {
         src={imageUrl}
         alt="projet"
         className="w-full h-[200px] object-cover"
+        loading="lazy" 
       />
 
       {/* content*/}

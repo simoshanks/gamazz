@@ -10,6 +10,7 @@ const HeroProjet= () => {
         src={contactImg}
         alt="Hero background"
         className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-75"
+        loading="lazy" 
 
         
       />

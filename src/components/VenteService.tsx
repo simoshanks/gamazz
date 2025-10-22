@@ -23,6 +23,7 @@ const VenteService = () => {
             src={venteBg}
             alt="Vente et Fourniture"
             className="w-full max-h-80 rounded-2xl shadow-xl object-cover"
+            loading="lazy"
           />
         </div>
 

@@ -22,6 +22,7 @@ const ConstructionService = () => {
             src={constimg} 
             alt="Construction"
             className="w-full max-h-80 rounded-2xl shadow-xl object-cover"
+            loading="lazy" 
           />
         </div>
 
