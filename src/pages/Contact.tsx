@@ -3,6 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import Herocontact from "@/components/Herocontact";
+import Localisation from "@/components/Localisation";
 
 const Contact = () => {
   return (
@@ -84,7 +85,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="bg-gray-50 p-10 rounded-2xl shadow-lg flex flex-col space-y-6">
-            <h2 className="text-3xl font-semibold text-[#6C2E0A]">Informations</h2>
+            <h2 className="text-3xl font-semibold text-[#6C2E0A]">Informations de contact</h2>
 
             <div className="flex items-center space-x-3 text-lg text-[#6C2E0A]">
               <HiOutlineMail className="w-6 h-6" />
@@ -117,6 +118,7 @@ const Contact = () => {
           </div>
         </div>
       </main>
+      <Localisation/>
 
       <Footer />
     </div>
