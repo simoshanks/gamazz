@@ -26,6 +26,7 @@ const Cardprojet = ({ objet, maitreOuvrage, imageUrl, id }) => {
           <button
             onClick={(e) => {
               e.stopPropagation();
+               window.scrollTo(0, 0);
               navigate(`/projet-details/${id}`);
             }}
             className="px-5 py-3 border-2 border-[#cc5d21] text-[#cc5d21] rounded-[40px] font-semibold hover:bg-[#cc5d21] hover:text-white transition-colors duration-300"

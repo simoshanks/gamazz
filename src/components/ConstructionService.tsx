@@ -1,4 +1,4 @@
-import constimg from "@/assets/construction.jpg";
+import constimg from "@/assets/construction.jpeg";
 const ConstructionService = () => {
   return (
     <section className="py-16 px-6 bg-[#FFF8F0]">

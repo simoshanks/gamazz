@@ -1,32 +1,37 @@
-import contactImg from '@/assets/contact.png';
+import contactImg from "@/assets/contact.png";
 
 const Herocontact = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden h-[50vh] w-full flex flex-col items-center justify-center"
+      className="relative overflow-hidden h-[60vh] sm:h-[70vh] md:h-[80vh] w-full flex flex-col items-center justify-center"
     >
-      {/* Background Image */}
+      {/* 🌄 Background Image */}
       <img
         src={contactImg}
         alt="Hero background"
         className="absolute top-0 left-0 w-full h-full object-cover object-center brightness-75"
       />
 
-      {/* Moving Big Text */}
-<div className="absolute w-full overflow-visible top-1/3">
-  <div className="inline-block animate-marquee text-white text-6xl md:text-7xl font-extrabold tracking-wide whitespace-nowrap">
-    Vos Projets, Notre Expertise – <span className='text-[#5a2608]'>Contactez Gamaz</span>
-  </div>
-</div>
-      {/* Big Center Button Below Text */}
+      {/* 🌀 Moving Big Text */}
+      <div className="absolute w-full overflow-hidden top-1/3 sm:top-1/4 md:top-1/3">
+        <div className="inline-block animate-marquee text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-wide whitespace-nowrap">
+          Vos Projets, Notre Expertise –{" "}
+          <span className="text-[#5a2608]">Contactez Gamaz</span>
+        </div>
+      </div>
+
+      {/* 🧭 Center Button */}
       <a
         href="https://charika.ma/societe-gamaz-travaux-138980"
-        className="relative mt-56 px-12 py-5 bg-[#5a2608] text-white text-2xl font-bold rounded-3xl shadow-xl hover:bg-[#5a2608] transition transform hover:scale-105 z-10"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative mt-[45vh] sm:mt-[50vh] md:mt-[55vh] px-6 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-[#5a2608] text-white text-lg sm:text-xl md:text-2xl font-bold rounded-3xl shadow-xl hover:bg-[#472107] transition transform hover:scale-105 z-10"
       >
         Visitez-Nous
       </a>
-      {/* Tailwind Custom Animation */}
+
+      {/* 💫 Animation Style */}
       <style>
         {`
           @keyframes marquee {
@@ -35,7 +40,8 @@ const Herocontact = () => {
           }
           .animate-marquee {
             display: inline-block;
-            animation: marquee 20s linear infinite;
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
           }
         `}
       </style>

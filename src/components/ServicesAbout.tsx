@@ -1,4 +1,4 @@
-import constructionImg from "@/assets/construction.jpg";
+import constructionImg from "@/assets/construction.jpeg";
 import eauImg from "@/assets/eau-service.png";
 import venteBg from "@/assets/vente.png";
 import { NavLink } from "react-router-dom";

@@ -15,7 +15,7 @@ const ProjetDetails = () => {
   if (!project)
     return (
       <p className="text-red-500 text-xl text-center mt-10 animate-pulse">
-        Projet introuvable ⚠️
+        Projet introuvable 
       </p>
     );
 
